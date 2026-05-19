@@ -5,8 +5,6 @@ import { Services } from "@/components/Services";
 import { TypesProjets } from "@/components/TypesProjets";
 import { Methode } from "@/components/Methode";
 import { Reseau } from "@/components/Reseau";
-import { Projets } from "@/components/Projets";
-import { Temoignages } from "@/components/Temoignages";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -21,8 +19,6 @@ export default function HomePage() {
         <TypesProjets />
         <Methode />
         <Reseau />
-        <Projets />
-        <Temoignages />
         <Contact />
       </main>
       <Footer />
