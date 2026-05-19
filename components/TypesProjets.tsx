@@ -17,15 +17,12 @@ const icons = {
   Patrimonial: (
     <svg viewBox="0 0 48 48" fill="none" className="h-7 w-7" aria-hidden="true">
       <path d="M6 18 24 8l18 10" stroke="currentColor" strokeWidth="1.2" />
-      <path d="M10 18v22M18 18v22M30 18v22M38 18v22" stroke="currentColor" strokeWidth="1.2" />
+      <path
+        d="M10 18v22M18 18v22M30 18v22M38 18v22"
+        stroke="currentColor"
+        strokeWidth="1.2"
+      />
       <path d="M6 40h36" stroke="currentColor" strokeWidth="1.2" />
-    </svg>
-  ),
-  Commercial: (
-    <svg viewBox="0 0 48 48" fill="none" className="h-7 w-7" aria-hidden="true">
-      <path d="M6 18h36l-3-8H9l-3 8Z" stroke="currentColor" strokeWidth="1.2" />
-      <path d="M8 18v22h32V18" stroke="currentColor" strokeWidth="1.2" />
-      <path d="M20 40V26h8v14" stroke="currentColor" strokeWidth="1.2" />
     </svg>
   ),
 } as const;
@@ -44,7 +41,7 @@ export function TypesProjets() {
           align="center"
         />
 
-        <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
+        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-14">
           {typologies.items.map((item, i) => (
             <Reveal key={item.label} delay={i * 100}>
               <article className="flex h-full flex-col items-start">
