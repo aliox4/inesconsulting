@@ -3,10 +3,7 @@
  *  SOURCE UNIQUE DE VÉRITÉ DU SITE
  * ─────────────────────────────────────────────────────────────────────────────
  *  Modifie ce fichier pour mettre à jour TOUS les contenus du site
- *  (marque, contact, textes, projets, témoignages, mentions légales).
- *
- *  Convention : tout placeholder à compléter est balisé par "[À COMPLÉTER]"
- *  ou commenté avec « TODO ». Cherche ces marqueurs avant la mise en ligne.
+ *  (marque, contact, textes, mentions légales).
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -19,50 +16,45 @@ export const siteConfig = {
   url: "https://www.inesdesquines.com",
 
   brand: {
-    name: "Inès Desquines Consulting",
-    short: "Inès Desquines",
+    name: "Inès Consulting",
+    short: "Inès",
     tagline: "Conseil immobilier & négociation",
   },
 
   contact: {
     email: "ines.desquines.consulting@gmail.com",
-    // Téléphone — placeholder. Format français à afficher :
-    phoneDisplay: "Téléphone à renseigner",
-    // Format E.164 pour le lien tel: (laisser null tant que non renseigné)
-    phoneE164: null as string | null, // ex. "+33612345678"
-    areaServed: "Île-de-France & France",
+    phoneDisplay: "06 48 22 54 00",
+    phoneE164: "+33648225400",
+    areaServed: "Île-de-France",
   },
 
   seo: {
     title:
-      "Conseil immobilier & négociation sur mesure | Inès Desquines Consulting",
+      "Conseil immobilier & négociation sur mesure | Inès Consulting",
     description:
-      "Accompagnement discret, humain et stratégique pour projets immobiliers résidentiels, commerciaux et patrimoniaux : conseil, expertise et négociation.",
+      "Accompagnement discret, humain et stratégique pour projets immobiliers résidentiels et patrimoniaux : conseil, expertise et négociation.",
   },
 
   nav: [
     { label: "Approche", href: "#approche" },
     { label: "Services", href: "#services" },
-    { label: "Projets", href: "#projets" },
+    { label: "Méthode", href: "#methode" },
     { label: "Contact", href: "#contact" },
   ],
 } as const;
 
 // ============================================================================
-//  2. HERO — message commercial clair en moins de 3 secondes
+//  2. HERO
 // ============================================================================
 
 export const hero = {
   eyebrow: "Cabinet de conseil immobilier indépendant",
   title: "Conseil immobilier & négociation sur mesure.",
   subtitle:
-    "Un accompagnement discret, humain et stratégique pour vos projets résidentiels, commerciaux et patrimoniaux.",
+    "Un accompagnement discret, humain et stratégique pour vos projets résidentiels et patrimoniaux.",
   typologies: [
     "Résidentiel",
     "Immeubles",
-    "Commerces",
-    "Restaurants",
-    "Hôtels",
     "Projets patrimoniaux",
   ],
   ctaPrimary: { label: "Parler de mon projet", href: "#contact" },
@@ -75,7 +67,7 @@ export const hero = {
 
 export const approche = {
   eyebrow: "L'approche",
-  title: "Une approche au service du projet, pas de l'ego.",
+  title: "Une approche au service du projet.",
   body: [
     "Chaque projet immobilier engage bien plus qu'une transaction : un lieu, une décision patrimoniale, une trajectoire personnelle ou professionnelle.",
     "L'accompagnement repose sur l'écoute, la lecture fine du contexte, la négociation et la mobilisation des bons experts lorsque le projet l'exige : financiers, notaires, avocats ou partenaires spécialisés.",
@@ -119,7 +111,7 @@ export const services = {
     {
       number: "03",
       title: "Expertise & accompagnement projet",
-      text: "Résidentiel, immeuble, commerce, restaurant, hôtel ou actif atypique : un accompagnement ajusté à la nature du bien.",
+      text: "Résidentiel, immeuble ou actif patrimonial : un accompagnement ajusté à la nature du bien.",
     },
   ],
 } as const;
@@ -130,7 +122,8 @@ export const services = {
 
 export const typologies = {
   eyebrow: "Pour quels projets",
-  title: "Des projets immobiliers qui demandent plus qu'une simple transaction.",
+  title:
+    "Des projets immobiliers qui demandent plus qu'une simple transaction.",
   items: [
     {
       label: "Résidentiel",
@@ -139,10 +132,6 @@ export const typologies = {
     {
       label: "Patrimonial",
       text: "Immeuble, arbitrage, investissement ou transmission : structurer les enjeux avant d'agir.",
-    },
-    {
-      label: "Commercial",
-      text: "Restaurant, hôtel, local professionnel ou murs commerciaux : comprendre l'usage, le potentiel et la valeur réelle du lieu.",
     },
   ],
 } as const;
@@ -197,88 +186,23 @@ export const reseau = {
 } as const;
 
 // ============================================================================
-//  8. PROJETS ACCOMPAGNÉS (anonymisés)
-// ============================================================================
-
-export const projets = {
-  eyebrow: "Projets accompagnés",
-  title: "Une sélection, dans le respect de la confidentialité.",
-  intro:
-    "Une sélection de projets peut être présentée avec discrétion, dans le respect de la confidentialité des clients.",
-  items: [
-    {
-      title: "Projet résidentiel confidentiel",
-      summary:
-        "Acquisition d'une résidence principale dans un quartier prisé. Négociation menée sur plusieurs semaines.",
-      tag: "Conseil",
-      // Remplacer par une vraie image si pertinent (optionnel)
-      image: null as string | null,
-    },
-    {
-      title: "Actif commercial",
-      summary:
-        "Reprise des murs et du fonds d'un établissement de restauration. Coordination avec experts juridiques et financiers.",
-      tag: "Négociation",
-      image: null as string | null,
-    },
-    {
-      title: "Projet patrimonial",
-      summary:
-        "Arbitrage et structuration d'un portefeuille immobilier familial. Accompagnement long sur la stratégie.",
-      tag: "Accompagnement",
-      image: null as string | null,
-    },
-  ],
-} as const;
-
-// ============================================================================
-//  9. TÉMOIGNAGES
-//  TODO : remplacer par les vrais avis clients après validation.
-// ============================================================================
-
-export const temoignages = {
-  eyebrow: "Témoignages",
-  title: "Ce qu'en disent les clients accompagnés.",
-  items: [
-    {
-      quote:
-        "Une présence juste, claire et rassurante dans une décision importante.",
-      author: "Client résidentiel", // TODO : prénom + initiale après accord
-      context: "Acquisition Paris",
-    },
-    {
-      quote:
-        "Une lecture fine du projet et une négociation menée avec précision.",
-      author: "Investisseur",
-      context: "Immeuble de rapport",
-    },
-    {
-      quote:
-        "Un accompagnement discret, humain et très professionnel.",
-      author: "Client patrimonial",
-      context: "Arbitrage familial",
-    },
-  ],
-} as const;
-
-// ============================================================================
-//  10. CONTACT
+//  8. CONTACT
 // ============================================================================
 
 export const contact = {
   eyebrow: "Prendre contact",
-  title: "Vous avez un projet immobilier à clarifier, négocier ou structurer ?",
+  title:
+    "Vous avez un projet immobilier à clarifier, négocier ou structurer ?",
   intro: "Échangeons simplement sur votre situation.",
   projectTypes: [
     "Résidentiel",
     "Patrimonial / Investissement",
-    "Commerce / Restaurant / Hôtel",
     "Autre",
   ],
 } as const;
 
 // ============================================================================
-//  11. MENTIONS LÉGALES
+//  9. MENTIONS LÉGALES
 //  TODO : compléter avec les vraies informations légales avant publication.
 // ============================================================================
 
@@ -289,13 +213,13 @@ export const legal = {
     siret: "[À compléter — SIRET]",
     address: "[À compléter — Adresse postale]",
     email: "ines.desquines.consulting@gmail.com",
-    phone: "[À compléter — Téléphone]",
+    phone: "06 48 22 54 00",
     director: "[À compléter — Directeur de la publication]",
   },
   host: {
-    name: "[À compléter — ex. Vercel Inc.]",
-    address: "[À compléter — Adresse de l'hébergeur]",
-    contact: "[À compléter — Coordonnées]",
+    name: "Vercel Inc.",
+    address: "440 N Barranca Ave #4133, Covina, CA 91723, USA",
+    contact: "https://vercel.com",
   },
   professional: {
     // À compléter UNIQUEMENT si l'activité est soumise à la loi Hoguet
