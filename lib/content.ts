@@ -2,9 +2,6 @@
  * ─────────────────────────────────────────────────────────────────────────────
  *  SOURCE UNIQUE DE VÉRITÉ DU SITE
  * ─────────────────────────────────────────────────────────────────────────────
- *  Modifie ce fichier pour mettre à jour TOUS les contenus du site
- *  (marque, contact, textes, mentions légales).
- * ─────────────────────────────────────────────────────────────────────────────
  */
 
 // ============================================================================
@@ -12,7 +9,6 @@
 // ============================================================================
 
 export const siteConfig = {
-  // URL canonique du site (à remplacer par le domaine final)
   url: "https://www.inesdesquines.com",
 
   brand: {
@@ -22,7 +18,7 @@ export const siteConfig = {
   },
 
   contact: {
-    email: "ines.desquines.consulting@gmail.com",
+    email: "contact@inesconsulting.fr",
     phoneDisplay: "06 48 22 54 00",
     phoneE164: "+33648225400",
     areaServed: "Île-de-France",
@@ -202,36 +198,74 @@ export const contact = {
 } as const;
 
 // ============================================================================
-//  9. MENTIONS LÉGALES
-//  TODO : compléter avec les vraies informations légales avant publication.
+//  9. INFORMATIONS LÉGALES
 // ============================================================================
+//
+// La section "professional" (Hoguet / IOBSP) sera ajoutée le jour où
+// les autorisations (carte T, IOBSP, RC pro, médiateur) seront en place.
+// Tant qu'elles ne sont pas obtenues, on ne publie pas de placeholders
+// sur la page mentions-légales.
 
 export const legal = {
   publisher: {
-    name: "[À compléter — Nom de l'éditeur]",
-    status: "[À compléter — Statut juridique : ex. Entreprise Individuelle]",
-    siret: "[À compléter — SIRET]",
-    address: "[À compléter — Adresse postale]",
-    email: "ines.desquines.consulting@gmail.com",
+    name: "Ines Desquines Consulting",
+    status: "Société par actions simplifiée à associé unique (SASU)",
+    capital: "1\u00A0000\u00A0€",
+    siren: "102 299 419",
+    rcs: "Paris 102 299 419",
+    address: "60 rue François 1er, 75008 Paris, France",
+    email: "contact@inesconsulting.fr",
     phone: "06 48 22 54 00",
-    director: "[À compléter — Directeur de la publication]",
+    director: "Inès Desquines",
+    activity:
+      "Conseil, intermédiation et accompagnement dans les transactions immobilières, la location de biens immobiliers et de fonds de commerce, apport d'affaires et courtage en crédit / financement immobilier selon les autorisations applicables.",
   },
   host: {
     name: "Vercel Inc.",
     address: "440 N Barranca Ave #4133, Covina, CA 91723, USA",
     contact: "https://vercel.com",
   },
-  professional: {
-    // À compléter UNIQUEMENT si l'activité est soumise à la loi Hoguet
-    // (transaction immobilière). Pour du conseil pur, ce bloc peut être omis.
-    cardNumber: "[À compléter — N° de carte professionnelle (si applicable)]",
-    cardAuthority:
-      "[À compléter — Autorité ayant délivré la carte (CCI compétente)]",
-    insurance:
-      "[À compléter — Assurance Responsabilité Civile Professionnelle (compagnie, n° de police)]",
-    feeSchedule:
-      "[À compléter — Barème d'honoraires (si transaction immobilière)]",
-    mediator:
-      "[À compléter — Médiateur de la consommation (nom + coordonnées)]",
-  },
+  // Date de dernière mise à jour des pages légales (affichée publiquement)
+  updatedAt: "19 mai 2026",
+} as const;
+
+// ============================================================================
+//  10. HONORAIRES (page /honoraires)
+//  TODO : remplacer le barème par les valeurs définitives après validation
+//  par la cliente. Le contenu actuel est un placeholder professionnel.
+// ============================================================================
+
+export const honoraires = {
+  eyebrow: "Informations",
+  title: "Honoraires",
+  intro:
+    "Les honoraires sont définis en toute transparence et adaptés à la nature du projet. Le barème détaillé est communiqué avant tout engagement, dans le cadre d'un devis ou d'une lettre de mission personnalisée.",
+  principles: [
+    {
+      label: "Transparence",
+      text: "Conditions tarifaires connues et acceptées avant le démarrage de la mission.",
+    },
+    {
+      label: "Adaptation",
+      text: "Pas de tarif unique. Les honoraires reflètent la nature, la durée et la complexité de l'accompagnement.",
+    },
+    {
+      label: "Sécurité",
+      text: "Aucun honoraire caché, aucun frais accessoire non préalablement annoncé.",
+    },
+  ],
+  modalities: [
+    {
+      label: "Forfait",
+      text: "Pour une mission de conseil cadrée et limitée dans le temps.",
+    },
+    {
+      label: "Pourcentage",
+      text: "Sur le montant de la transaction, dans le cadre d'une opération d'intermédiation immobilière, conformément aux dispositions de la loi n° 70-9 du 2 janvier 1970.",
+    },
+    {
+      label: "Honoraires de réussite",
+      text: "Déclenchés à l'aboutissement effectif d'un projet ou d'une négociation.",
+    },
+  ],
 } as const;
