@@ -15,7 +15,7 @@ export function Footer() {
             <Logo />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-ink-muted">
               Conseil immobilier, expertise et négociation pour projets
-              résidentiels, commerciaux et patrimoniaux.
+              résidentiels et patrimoniaux.
             </p>
           </div>
 
