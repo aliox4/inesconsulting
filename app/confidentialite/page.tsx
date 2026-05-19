@@ -5,7 +5,7 @@ import { siteConfig, legal } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
   description:
-    "Politique de confidentialité du site Inès Desquines Consulting — traitement des données, RGPD, droits des utilisateurs.",
+    "Politique de confidentialité du site Inès Consulting — traitement des données, RGPD, droits des utilisateurs.",
   robots: { index: true, follow: true },
 };
 
@@ -14,7 +14,7 @@ export default function ConfidentialitePage() {
     <LegalPage
       eyebrow="Informations"
       title="Politique de confidentialité"
-      updatedAt="—"
+      updatedAt={legal.updatedAt}
     >
       <p>
         La présente politique décrit la manière dont les informations
@@ -61,9 +61,7 @@ export default function ConfidentialitePage() {
       </p>
 
       <h2>Finalités &amp; base légale</h2>
-      <p>
-        Les données collectées sont utilisées pour&nbsp;:
-      </p>
+      <p>Les données collectées sont utilisées pour&nbsp;:</p>
       <ul>
         <li>répondre à votre demande de prise de contact&nbsp;;</li>
         <li>vous proposer, le cas échéant, un rendez-vous d'échange&nbsp;;</li>
