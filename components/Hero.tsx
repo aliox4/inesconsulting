@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { hero } from "@/lib/content";
 
@@ -98,79 +99,29 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Bloc visuel abstrait — composition architecturale fine */}
+          {/* Portrait — colonne droite */}
           <div className="lg:col-span-4">
             <Reveal delay={500}>
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm border border-line bg-paper-deep">
-                {/* Composition : façade abstraite, fenêtres en grille */}
-                <svg
-                  viewBox="0 0 300 400"
-                  className="absolute inset-0 h-full w-full"
-                  preserveAspectRatio="xMidYMid slice"
+              <figure className="relative aspect-[3/4] w-full overflow-hidden rounded-sm border border-line bg-paper-deep shadow-[0_1px_2px_rgba(28,27,23,0.04),0_8px_24px_-12px_rgba(28,27,23,0.08)]">
+                <Image
+                  src="/portrait-ines.jpg"
+                  alt="Inès Desquines, fondatrice du cabinet"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 80vw, 100vw"
+                  className="object-cover object-[center_25%]"
+                  priority
+                  quality={85}
+                />
+                {/* Léger dégradé bas pour la lisibilité de la légende */}
+                <div
                   aria-hidden="true"
-                >
-                  <defs>
-                    <pattern
-                      id="windows"
-                      x="0"
-                      y="0"
-                      width="60"
-                      height="80"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <rect
-                        x="12"
-                        y="14"
-                        width="36"
-                        height="52"
-                        fill="none"
-                        stroke="#1C1B17"
-                        strokeWidth="0.8"
-                        opacity="0.55"
-                      />
-                      <line
-                        x1="30"
-                        y1="14"
-                        x2="30"
-                        y2="66"
-                        stroke="#1C1B17"
-                        strokeWidth="0.6"
-                        opacity="0.4"
-                      />
-                    </pattern>
-                  </defs>
-                  <rect width="300" height="400" fill="#EFE8DA" />
-                  <rect
-                    x="20"
-                    y="40"
-                    width="260"
-                    height="320"
-                    fill="url(#windows)"
-                  />
-                  {/* Filet décoratif */}
-                  <line
-                    x1="20"
-                    y1="40"
-                    x2="280"
-                    y2="40"
-                    stroke="#6B3A2C"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="20"
-                    y1="360"
-                    x2="280"
-                    y2="360"
-                    stroke="#6B3A2C"
-                    strokeWidth="1"
-                  />
-                </svg>
-                {/* Légende discrète */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[10px] uppercase tracking-eyebrow text-ink/70">
-                  <span>—</span>
-                  <span>Cabinet de conseil</span>
-                </div>
-              </div>
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink/40 to-transparent"
+                />
+                <figcaption className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[10px] uppercase tracking-eyebrow text-paper-soft">
+                  <span aria-hidden="true">—</span>
+                  <span>Inès Desquines</span>
+                </figcaption>
+              </figure>
             </Reveal>
           </div>
         </div>
