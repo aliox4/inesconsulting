@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { siteConfig } from "@/lib/content";
 import "./globals.css";
 
-// Typographies éditoriales — Fraunces (display, variable) + Manrope (sans, lisible)
-const fraunces = Fraunces({
+// Typographies — Cormorant Garamond (display, classique premium)
+//                + Manrope (sans, lisible)
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const manrope = Manrope({
@@ -22,18 +24,18 @@ const SITE_NAME = siteConfig.brand.name;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Conseil immobilier & négociation sur mesure | Inès Desquines Consulting",
-    template: "%s | Inès Desquines Consulting",
+    default:
+      "Conseil immobilier & négociation sur mesure | Inès Consulting",
+    template: "%s | Inès Consulting",
   },
   description:
-    "Accompagnement discret, humain et stratégique pour projets immobiliers résidentiels, commerciaux et patrimoniaux : conseil, expertise et négociation.",
+    "Accompagnement discret, humain et stratégique pour projets immobiliers résidentiels et patrimoniaux : conseil, expertise et négociation.",
   keywords: [
     "conseil immobilier",
     "négociation immobilière",
     "expertise immobilière",
     "accompagnement projet immobilier",
     "immobilier patrimonial",
-    "immobilier commercial",
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -48,13 +50,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: "Conseil immobilier & négociation sur mesure",
     description:
-      "Accompagnement discret, humain et stratégique pour projets immobiliers résidentiels, commerciaux et patrimoniaux.",
+      "Accompagnement discret, humain et stratégique pour projets immobiliers résidentiels et patrimoniaux.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Conseil immobilier & négociation sur mesure",
     description:
-      "Accompagnement discret, humain et stratégique pour projets immobiliers résidentiels, commerciaux et patrimoniaux.",
+      "Accompagnement discret, humain et stratégique pour projets immobiliers résidentiels et patrimoniaux.",
   },
   robots: {
     index: true,
@@ -79,7 +81,9 @@ const jsonLd = {
   description: siteConfig.seo.description,
   url: SITE_URL,
   email: siteConfig.contact.email,
-  ...(siteConfig.contact.phoneE164 ? { telephone: siteConfig.contact.phoneE164 } : {}),
+  ...(siteConfig.contact.phoneE164
+    ? { telephone: siteConfig.contact.phoneE164 }
+    : {}),
   areaServed: siteConfig.contact.areaServed,
   serviceType: [
     "Conseil immobilier",
@@ -94,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${fraunces.variable} ${manrope.variable}`}>
+    <html lang="fr" className={`${cormorant.variable} ${manrope.variable}`}>
       <body className="min-h-screen">
         <script
           type="application/ld+json"
