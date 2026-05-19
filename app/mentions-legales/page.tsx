@@ -5,20 +5,20 @@ import { legal, siteConfig } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Mentions légales",
   description:
-    "Mentions légales du site Inès Desquines Consulting — éditeur, hébergeur, informations professionnelles.",
+    "Mentions légales du site Inès Consulting — éditeur, hébergeur, informations professionnelles.",
   robots: { index: true, follow: true },
 };
 
 export default function MentionsLegalesPage() {
   const p = legal.publisher;
   const h = legal.host;
-  const pro = legal.professional;
+  const telHref = `tel:${siteConfig.contact.phoneE164}`;
 
   return (
     <LegalPage
       eyebrow="Informations"
       title="Mentions légales"
-      updatedAt="—"
+      updatedAt={legal.updatedAt}
     >
       <p>
         Le présent site est édité dans le respect de la loi n° 2004-575 du
@@ -30,16 +30,22 @@ export default function MentionsLegalesPage() {
 
       <h2>Éditeur du site</h2>
       <dl>
-        <dt>Dénomination</dt>
+        <dt>Dénomination sociale</dt>
         <dd>{p.name}</dd>
 
-        <dt>Statut juridique</dt>
+        <dt>Forme juridique</dt>
         <dd>{p.status}</dd>
 
-        <dt>SIRET</dt>
-        <dd>{p.siret}</dd>
+        <dt>Capital social</dt>
+        <dd>{p.capital}</dd>
 
-        <dt>Siège</dt>
+        <dt>SIREN</dt>
+        <dd>{p.siren}</dd>
+
+        <dt>RCS</dt>
+        <dd>{p.rcs}</dd>
+
+        <dt>Siège social</dt>
         <dd>{p.address}</dd>
 
         <dt>Email</dt>
@@ -48,16 +54,19 @@ export default function MentionsLegalesPage() {
         </dd>
 
         <dt>Téléphone</dt>
-        <dd>{p.phone}</dd>
+        <dd>
+          <a href={telHref}>{p.phone}</a>
+        </dd>
 
-        <dt>Directeur de la publication</dt>
+        <dt>Directrice de la publication</dt>
         <dd>{p.director}</dd>
       </dl>
 
+      <h2>Activité</h2>
+      <p>{p.activity}</p>
+
       <h2>Hébergement</h2>
-      <p>
-        Le site est hébergé par&nbsp;:
-      </p>
+      <p>Le site est hébergé par&nbsp;:</p>
       <dl>
         <dt>Hébergeur</dt>
         <dd>{h.name}</dd>
@@ -66,31 +75,11 @@ export default function MentionsLegalesPage() {
         <dd>{h.address}</dd>
 
         <dt>Contact</dt>
-        <dd>{h.contact}</dd>
-      </dl>
-
-      <h2>Informations professionnelles</h2>
-      <p>
-        L'activité exercée relève du conseil et de l'accompagnement de projets
-        immobiliers. Lorsqu'une opération de transaction immobilière est
-        réalisée à titre habituel, elle s'inscrit dans le cadre de la loi
-        n°&nbsp;70-9 du 2&nbsp;janvier&nbsp;1970 (loi Hoguet).
-      </p>
-      <dl>
-        <dt>Carte professionnelle</dt>
-        <dd>{pro.cardNumber}</dd>
-
-        <dt>Autorité de délivrance</dt>
-        <dd>{pro.cardAuthority}</dd>
-
-        <dt>Assurance RC pro.</dt>
-        <dd>{pro.insurance}</dd>
-
-        <dt>Barème d'honoraires</dt>
-        <dd>{pro.feeSchedule}</dd>
-
-        <dt>Médiateur</dt>
-        <dd>{pro.mediator}</dd>
+        <dd>
+          <a href={h.contact} target="_blank" rel="noreferrer">
+            {h.contact}
+          </a>
+        </dd>
       </dl>
 
       <h2>Propriété intellectuelle</h2>
