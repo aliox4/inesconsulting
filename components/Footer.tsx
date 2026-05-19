@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { siteConfig } from "@/lib/content";
+import { siteConfig, legal } from "@/lib/content";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -66,19 +66,33 @@ export function Footer() {
                   href="/confidentialite"
                   className="text-ink transition-colors hover:text-accent"
                 >
-                  Politique de confidentialité
+                  Confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/honoraires"
+                  className="text-ink transition-colors hover:text-accent"
+                >
+                  Honoraires
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Filet + copyright */}
-        <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-line/60 pt-8 text-xs text-ink-faint sm:flex-row sm:items-center">
-          <p>
-            © {year} {siteConfig.brand.name}. Tous droits réservés.
+        {/* Filet + mention légale + copyright */}
+        <div className="mt-16 border-t border-line/60 pt-8">
+          <p className="text-xs leading-relaxed text-ink-faint">
+            {legal.publisher.name} — SASU au capital de {legal.publisher.capital}{" "}
+            — RCS {legal.publisher.rcs}
           </p>
-          <p>Site indépendant — confidentialité respectée.</p>
+          <div className="mt-3 flex flex-col items-start justify-between gap-2 text-xs text-ink-faint sm:flex-row sm:items-center">
+            <p>
+              © {year} {siteConfig.brand.name}. Tous droits réservés.
+            </p>
+            <p>Site indépendant — confidentialité respectée.</p>
+          </div>
         </div>
       </div>
     </footer>
